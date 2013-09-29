@@ -1,8 +1,14 @@
 <!doctype html>
 <html>
   <head>
+    <!-- Background image by Anirudh Koul -
+    http://www.flickr.com/photos/anirudhkoul/788832193/sizes/l/in/photostream/
+    You can view this repository's source on Github:
+    https://github.com/dellsystem/ctlibre.com
+    -->
     <title>Cité Libre</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script>
     $(document).ready(function() {
@@ -24,8 +30,13 @@
       padding: 0;
       width: 100%;
       height: 100%;
-      background-image: url('pattern.png');
-      font-family: Arial, Helvetica, sans-serif;
+      background-color: #000;
+      background-image: url('montreal.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: right bottom;
+      background-size: 100%;
+      font-family: Raleway, Arial, Helvetica, sans-serif;
     }
 
     a {
@@ -62,27 +73,36 @@
     }
 
     #main {
-      text-align: center;
-      width: 100%;
-      height: 170px;
-      position: absolute;
-      top: 50%;
-      margin-top: -70px;
+        text-align: center;
+        width: 100%;
+        height: 170px;
+        margin-top: 100px;
     }
 
     h1 {
-      text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.7);
-      font-size: 120px;
-      margin: 0;
-      letter-spacing: 2px;
+        text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.7);
+        font-size: 120px;
+        margin: 0;
+        letter-spacing: 2px;
+    }
+
+    #social-media {
+        width: 700px;
+        margin: 0 auto;
+        text-align: right;
     }
 
     h2 {
-      font-size: 45px;
-      margin: 0;
-      font-weight: normal;
-      color: black;
-      text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.2);
+        font-size: 45px;
+        margin-top: 70px;
+        font-weight: normal;
+        text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.2);
+        color: #fff;
+        text-transform: uppercase;
+    }
+
+    .show-promo {
+        text-transform: uppercase;
     }
 
     p img {
@@ -106,17 +126,15 @@
     </div>
     <div id="main">
       <h1><img src="logo.png"></h1>
-      <h2>bientôt | soon</h2>
-      <br />
-      <p>
+      <p id="social-media">
         <!-- SORRY but target="_blank" was the only way to get around the
              weird domain-cloaking stuff -->
         <a href="http://facebook.com/ctlibre" target="_blank"><img src="fb.png" alt="Facebook" /></a>
         <a href="http://twitter.com/ctlibre" target="_blank"><img src="twitter.png" alt="Twitter" /></a>
         <a href="mailto:ctlibre@ctlibre.com"><img src="email.png" alt="Email" /></a>
       </p>
-      <br />
-      <p><a class='show-promo' href="http://www.youtube.com/watch?v=ZSVVFpxr27A">promo video // vid&eacute;o promotionnelle</a></p>
+      <h2>Octobre // October</h2>
+      <p><a class='show-promo' href="http://www.youtube.com/watch?v=ZSVVFpxr27A">[ promo video // vid&eacute;o promotionnelle ]</a></p>
     </div>
   </body>
 </html>
