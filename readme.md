@@ -1,5 +1,5 @@
-Cité Libre :: [www.ctlibre.com](http://ctlibre.com)
-===================================================
+Cité Libre
+==========
 
 Source code for [ctlibre.com](http://ctlibre.com). Currently just a splash page.
 
