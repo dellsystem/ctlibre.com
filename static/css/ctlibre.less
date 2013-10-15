@@ -1,0 +1,181 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.raleway {
+    font-family: Raleway;
+}
+
+.georgia {
+    font-family: Georgia;
+}
+
+body {
+    font-size: 17px;
+    .georgia;
+}
+
+.wrapper {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#header {
+    height: 100px;
+    background: #eee;
+}
+
+#logo {
+    width: 270px;
+    padding: 20px 0;
+}
+
+#menu {
+    .raleway;
+    float: right;
+    list-style-type: none;
+    padding-top: 40px;
+
+    li {
+        float: left;
+        padding: 0 10px;
+
+        a {
+            text-decoration: none;
+            color: #888;
+            text-transform: uppercase;
+            font-weight: bold;
+
+            &:hover {
+                color: #444;
+            }
+        }
+    }
+
+    li:first-child {
+        padding-left: 0;
+    }
+
+    li:last-child {
+        padding-right: 0;
+    }
+}
+
+.headline {
+    .raleway;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#masthead {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+
+    .photo {
+        position: absolute;
+        width: 100%;
+    }
+
+    .photo img {
+        margin-top: -120px;
+        width: 100%;
+    }
+
+    .block-wrapper {
+        position: absolute;
+        top: 50px;
+        right: 50%;
+        margin-right: -500px;
+    }
+
+    .block {
+        box-sizing: border-box;
+        padding: 30px;
+        width: 450px;
+        height: 400px;
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+
+        .headline {
+            font-size: 2.0em;
+        }
+
+        .byline {
+            .georgia;
+            margin: 10px 0;
+        }
+    }
+}
+
+#content {
+    .wrapper;
+    margin-top: 50px;
+}
+
+.row {
+    clear: both;
+}
+
+.row .span4 {
+    float: left;
+    width: 300px;
+    margin: 0 25px;
+    position: relative;
+
+    .photo {
+        .overlay {
+            .raleway;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            padding-top: 75px;
+            text-transform: uppercase;
+
+            .date {
+                font-size: 1.5em;
+                font-weight: bold;
+            }
+
+            .category {
+                font-size: 1.2em;
+            }
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .info {
+        .headline {
+            margin: 15px 0;
+            font-size: 1.5em;
+        }
+
+        .byline {
+            margin-bottom: 15px;
+        }
+    }
+
+    &:first-child {
+        margin-left: 0;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+#footer {
+    .wrapper;
+    clear: both;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
