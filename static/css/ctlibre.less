@@ -1,3 +1,7 @@
+@sideMargin: 150px;
+@thumbHeight: 500px;
+@darkerGrey: #0d0d0d;
+
 * {
     padding: 0;
     margin: 0;
@@ -14,17 +18,20 @@
 body {
     font-size: 17px;
     .serif;
+    background: @darkerGrey;
 }
 
 .wrapper {
-    width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
+    min-width: 1000px;
+    margin: 0 @sideMargin;
 }
 
 #header {
     height: 100px;
-    background: #eee;
+    background: @darkerGrey;
+    box-shadow: 0 1px 50px rgba(0, 0, 0, 0.7);
+    position: relative;
+    z-index: 2;
 }
 
 #logo {
@@ -44,12 +51,13 @@ body {
 
         a {
             text-decoration: none;
-            color: #888;
+            color: #ccc;
             text-transform: uppercase;
             font-weight: bold;
+            //text-shadow: 1px 2px #fff;
 
             &:hover {
-                color: #444;
+                color: #fff;
             }
         }
     }
@@ -74,6 +82,10 @@ body {
     height: 500px;
     overflow: hidden;
 
+    a:hover img {
+        opacity: 1.0;
+    }
+
     .photo {
         position: absolute;
         width: 100%;
@@ -82,13 +94,13 @@ body {
     .photo img {
         margin-top: -120px;
         width: 100%;
+        opacity: 0.85;
     }
 
     .block-wrapper {
         position: absolute;
         top: 50px;
-        right: 50%;
-        margin-right: -500px;
+        right: @sideMargin;
     }
 
     .block {
@@ -101,18 +113,22 @@ body {
 
         .headline {
             font-size: 2.0em;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
         }
 
         .byline {
             .serif;
             margin: 10px 0;
         }
+
+        .description {
+            font-size: 1.3em;
+        }
     }
 }
 
 #content {
     .wrapper;
-    margin-top: 50px;
 }
 
 .row {
@@ -121,21 +137,39 @@ body {
 
 .row .span4 {
     float: left;
-    width: 300px;
-    margin: 0 25px;
+    width: 33.333%;
     position: relative;
 
+    &:hover {
+        .info {
+            //visibility: visible;
+        }
+    }
     .photo {
+        &:hover {
+            img {
+                opacity: 1.0;
+            }
+
+            .overlay {
+                display: block !important;
+            }
+        }
+
         .overlay {
+            display: none;
             .sans-serif;
+            background: rgba(0, 0, 0, 0.5);
             position: absolute;
-            top: 0;
+            top: @thumbHeight / 2;
             left: 0;
             width: 100%;
             text-align: center;
             color: #fff;
-            padding-top: 75px;
+            margin-top: -100px;
             text-transform: uppercase;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+            padding: 20px 0;
 
             .date {
                 font-size: 1.5em;
@@ -149,10 +183,14 @@ body {
 
         img {
             width: 100%;
+            opacity: 0.85;
         }
     }
 
     .info {
+        //visibility: hidden;
+        color: #eee;
+
         .headline {
             margin: 15px 0;
             font-size: 1.5em;
