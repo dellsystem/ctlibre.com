@@ -21,22 +21,22 @@
 <div class="row">
 {% endif %}
     <div class="span4">
-        <div class="photo">
-            <a href="{{ article.get_absolute_url }}">
-                <img src="{{ article.graphic.url_500x333 }}" />
-                <div class="overlay">
-                    <p class="date">
-                        {{ article.created_on|date:"F j" }}
-                    </p>
-                    <p class="category">[{{ article.category }}]</p>
-                </div>
-            </a>
-        </div>
-        <div class="info">
-            <p class="headline">{{ article.title }}</p>
-            <p class="byline">by {{ article.author }}</p>
-            <p>{{ article.description }}</p>
-        </div>
+        <a href="{{ article.get_absolute_url }}">
+            <div class="photo">
+                    <img src="{{ article.graphic.url_500x333 }}" />
+                    <div class="overlay">
+                        <p class="date">
+                            {{ article.created_on|date:"F j" }}
+                        </p>
+                        <p class="category">[{{ article.category }}]</p>
+                    </div>
+            </div>
+            <div class="info">
+                <p class="headline">{{ article.title }}</p>
+                <p class="byline">by {{ article.author }}</p>
+                <p>{{ article.description }}</p>
+            </div>
+        </a>
     </div>
 {% if forloop.counter|divisibleby:"3" %}
 </div>
