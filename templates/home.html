@@ -26,62 +26,46 @@
         </div>
     </div>
     <div id="masthead">
-        <div class="photo">
-            <img src="{{ STATIC_URL }}img/splash.jpg" />
-        </div>
-        <div class="block-wrapper">
-            <div class="block">
-                <p class="headline">Some headline</h2>
-                <p class="byline">by Ash Ketchum</p>
-                <p>lol</p>
+        <a href="">
+            <div class="photo">
+                <img src="{{ lead_story.graphic.url_1500x1000 }}" />
             </div>
-        </div>
+            <div class="block-wrapper">
+                <div class="block">
+                    <p class="headline">{{ lead_story.title }}</h2>
+                    <p class="byline">by {{ lead_story.author }}</p>
+                    <p class="description">{{ lead_story.description }}</p>
+                </div>
+            </div>
+        </a>
     </div>
     <div id="content">
+        {% for article in main_stories %}
+        {% if forloop.counter0|divisibleby:"3" %}
         <div class="row">
+        {% endif %}
             <div class="span4">
                 <div class="photo">
-                    <img src="{{ STATIC_URL }}img/splash5.jpg" />
-                    <div class="overlay">
-                        <p class="date">October 25</p>
-                        <p class="category">[Points]</p>
-                    </div>
+                    <a href="">
+                        <img src="{{ article.graphic.url_500x333 }}" />
+                        <div class="overlay">
+                            <p class="date">
+                                {{ article.created_on|date:"F j" }}
+                            </p>
+                            <p class="category">[{{ article.category }}]</p>
+                        </div>
+                    </a>
                 </div>
                 <div class="info">
-                    <p class="headline">Another headline</p>
-                    <p class="byline">by Ash Ketchum</p>
-                    <p>Test</p>
+                    <p class="headline">{{ article.title }}</p>
+                    <p class="byline">by {{ article.author }}</p>
+                    <p>{{ article.description }}</p>
                 </div>
             </div>
-            <div class="span4">
-                <div class="photo">
-                    <img src="{{ STATIC_URL }}img/splash5.jpg" />
-                    <div class="overlay">
-                        <p class="date">October 25</p>
-                        <p class="category">[Points]</p>
-                    </div>
-                </div>
-                <div class="info">
-                    <p class="headline">Another headline</p>
-                    <p class="byline">by Ash Ketchum</p>
-                    <p>Test</p>
-                </div>
-            </div>
-            <div class="span4">
-                <div class="photo">
-                    <img src="{{ STATIC_URL }}img/splash5.jpg" />
-                    <div class="overlay">
-                        <p class="date">October 25</p>
-                        <p class="category">[Points]</p>
-                    </div>
-                </div>
-                <div class="info">
-                    <p class="headline">Another headline</p>
-                    <p class="byline">by Ash Ketchum</p>
-                    <p>Test</p>
-                </div>
-            </div>
+        {% if forloop.counter|divisibleby:"3" %}
         </div>
+        {% endif %}
+        {% endfor %}
     </div>
     <div id="footer">
         <p>footer</p>
