@@ -1,3 +1,4 @@
 db.sqlite
+media
 *.pyc
 *.swp
