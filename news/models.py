@@ -1,3 +1,4 @@
+from django.core.urlresolvers import reverse
 from django.db import models
 from django_thumbs.db.models import ImageWithThumbsField
 
@@ -40,6 +41,9 @@ class Article(models.Model):
     slug = models.SlugField()
     graphic = ImageWithThumbsField(upload_to='graphics', sizes=GRAPHIC_SIZES)
     is_lead_story = UniqueBooleanField()
+
+    def get_absolute_url(self):
+        return reverse('article-detail', args=[self.slug])
 
     def __unicode__(self):
         return "%s by %s [%s]" % (self.title, self.author, self.category)

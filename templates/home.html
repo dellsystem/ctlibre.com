@@ -1,74 +1,45 @@
-<!doctype html>
-<html>
-<head>
-    <title>ctlibre</title>
-    <link href="//fonts.googleapis.com/css?family=Lora|Raleway"
-          rel="stylesheet" type="text/css" />
-    <link rel="stylesheet/less" type="text/css"
-          href="{{ STATIC_URL }}css/ctlibre.less" />
-    <script src="{{ STATIC_URL }}js/less.min.js"></script>
-</head>
-<body>
-    <div id="header">
-        <div class="wrapper">
-            <ul id="menu">
-                <li><a href="#">Points</a></li>
-                <li><a href="#">Derivatives</a></li>
-                <li><a href="#">Parlement libre</a></li>
-                <li><a href="#">Univercite libre</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-            <div id="logo">
-                <a href="/">
-                    <img src="{{ STATIC_URL }}img/logo.png" alt="ctlibre" />
-                </a>
-            </div>
+{% extends "base.html" %}
+
+{% block masthead %}
+<a href="{{ lead_story.get_absolute_url }}">
+    <div class="photo">
+        <img src="{{ lead_story.graphic.url_1500x1000 }}" />
+    </div>
+    <div class="block-wrapper">
+        <div class="block">
+            <p class="headline">{{ lead_story.title }}</h2>
+            <p class="byline">by {{ lead_story.author }}</p>
+            <p class="description">{{ lead_story.description }}</p>
         </div>
     </div>
-    <div id="masthead">
-        <a href="">
-            <div class="photo">
-                <img src="{{ lead_story.graphic.url_1500x1000 }}" />
-            </div>
-            <div class="block-wrapper">
-                <div class="block">
-                    <p class="headline">{{ lead_story.title }}</h2>
-                    <p class="byline">by {{ lead_story.author }}</p>
-                    <p class="description">{{ lead_story.description }}</p>
+</a>
+{% endblock %}
+
+{% block content %}
+{% for article in main_stories %}
+{% if forloop.counter0|divisibleby:"3" %}
+<div class="row">
+{% endif %}
+    <div class="span4">
+        <div class="photo">
+            <a href="{{ article.get_absolute_url }}">
+                <img src="{{ article.graphic.url_500x333 }}" />
+                <div class="overlay">
+                    <p class="date">
+                        {{ article.created_on|date:"F j" }}
+                    </p>
+                    <p class="category">[{{ article.category }}]</p>
                 </div>
-            </div>
-        </a>
-    </div>
-    <div id="content">
-        {% for article in main_stories %}
-        {% if forloop.counter0|divisibleby:"3" %}
-        <div class="row">
-        {% endif %}
-            <div class="span4">
-                <div class="photo">
-                    <a href="">
-                        <img src="{{ article.graphic.url_500x333 }}" />
-                        <div class="overlay">
-                            <p class="date">
-                                {{ article.created_on|date:"F j" }}
-                            </p>
-                            <p class="category">[{{ article.category }}]</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="info">
-                    <p class="headline">{{ article.title }}</p>
-                    <p class="byline">by {{ article.author }}</p>
-                    <p>{{ article.description }}</p>
-                </div>
-            </div>
-        {% if forloop.counter|divisibleby:"3" %}
+            </a>
         </div>
-        {% endif %}
-        {% endfor %}
+        <div class="info">
+            <p class="headline">{{ article.title }}</p>
+            <p class="byline">by {{ article.author }}</p>
+            <p>{{ article.description }}</p>
+        </div>
     </div>
-    <div id="footer">
-        <p>footer</p>
-    </div>
-</body>
-</html>
+{% if forloop.counter|divisibleby:"3" %}
+</div>
+{% endif %}
+{% endfor %}
+{% endblock %}

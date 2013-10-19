@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% load markup %}
+
+{% block masthead %}
+<div class="photo">
+    <img src="{{ article.graphic.url_1500x1000 }}" />
+    <div class="title-wrapper">
+        <div class="title">
+            <h1>{{ article.title }}</h1>
+            <p class="byline">by {{ article.author }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div id="article">
+    <p class="description">{{ article.description }}</p>
+    <div class="content">
+        {{ article.content|markdown }}
+    </div>
+</div>
+{% endblock %}

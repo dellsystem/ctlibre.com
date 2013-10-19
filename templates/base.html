@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+    <title>ctlibre</title>
+    <link href="//fonts.googleapis.com/css?family=Lora|Raleway"
+          rel="stylesheet" type="text/css" />
+    <link rel="stylesheet/less" type="text/css"
+          href="{{ STATIC_URL }}css/ctlibre.less" />
+    <script src="{{ STATIC_URL }}js/less.min.js"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="wrapper">
+            <ul id="menu">
+                <li><a href="#">Points</a></li>
+                <li><a href="#">Derivatives</a></li>
+                <li><a href="#">Parlement libre</a></li>
+                <li><a href="#">Univercite libre</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+            <div id="logo">
+                <a href="/">
+                    <img src="{{ STATIC_URL }}img/logo.png" alt="ctlibre" />
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="masthead">
+        {% block masthead %}
+        {% endblock %}
+    </div>
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div id="footer">
+        <p>footer</p>
+    </div>
+</body>
+</html>

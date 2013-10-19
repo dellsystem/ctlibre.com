@@ -1,6 +1,8 @@
 @sideMargin: 150px;
-@thumbHeight: 500px;
 @darkerGrey: #0d0d0d;
+@darkGrey: #222;
+@mastheadHeight: 600px;
+@mastheadTopSpace: 50px;
 
 * {
     padding: 0;
@@ -18,7 +20,6 @@
 body {
     font-size: 17px;
     .serif;
-    background: @darkerGrey;
 }
 
 .wrapper {
@@ -79,7 +80,7 @@ body {
 
 #masthead {
     position: relative;
-    height: 500px;
+    height: @mastheadHeight;
     overflow: hidden;
 
     a:hover img {
@@ -97,9 +98,35 @@ body {
         opacity: 0.85;
     }
 
+    .title-wrapper {
+        position: absolute;
+        top: 250px;
+        width: 100%;
+    }
+
+    .title {
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        padding: 20px 0;
+        width: 100%;
+        text-align: center;
+
+        h1 {
+            .sans-serif;
+            text-transform: uppercase;
+            font-size: 3.0em;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+        }
+
+        .byline {
+            font-style: italic;
+            font-size: 1.2em;
+        }
+    }
+
     .block-wrapper {
         position: absolute;
-        top: 50px;
+        top: @mastheadTopSpace;
         right: @sideMargin;
     }
 
@@ -107,7 +134,7 @@ body {
         box-sizing: border-box;
         padding: 30px;
         width: 450px;
-        height: 400px;
+        height: @mastheadHeight - (@mastheadTopSpace * 2);
         background: rgba(0, 0, 0, 0.5);
         color: #fff;
 
@@ -118,6 +145,7 @@ body {
 
         .byline {
             .serif;
+            font-style: italic;
             margin: 10px 0;
         }
 
@@ -145,6 +173,7 @@ body {
             //visibility: visible;
         }
     }
+
     .photo {
         &:hover {
             img {
@@ -157,16 +186,15 @@ body {
         }
 
         .overlay {
-            display: none;
+            //display: none;
             .sans-serif;
             background: rgba(0, 0, 0, 0.5);
             position: absolute;
-            top: @thumbHeight / 2;
+            top: 8.0em;
             left: 0;
             width: 100%;
             text-align: center;
             color: #fff;
-            margin-top: -100px;
             text-transform: uppercase;
             text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
             padding: 20px 0;
@@ -189,7 +217,7 @@ body {
 
     .info {
         //visibility: hidden;
-        color: #eee;
+        color: @darkGrey;
 
         .headline {
             margin: 15px 0;
@@ -207,6 +235,33 @@ body {
 
     &:last-child {
         margin-right: 0;
+    }
+}
+
+#article {
+    .description {
+        font-size: 1.8em;
+        text-align: center;
+        font-style: italic;
+        border-bottom: 1px double @darkGrey;
+        padding: 100px 0;
+    }
+
+    .content {
+        padding: 100px 0;
+        font-size: 2.0em;
+
+        p {
+            padding: 30px 0;
+
+            &:first-child {
+                padding-top: 0;
+            }
+
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
     }
 }
 
