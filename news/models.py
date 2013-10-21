@@ -42,8 +42,8 @@ class Article(models.Model):
     graphic = ImageWithThumbsField(upload_to='graphics', sizes=GRAPHIC_SIZES)
     is_lead_story = UniqueBooleanField()
 
-    def get_absolute_url(self):
-        return reverse('article-detail', args=[self.slug])
-
     def __unicode__(self):
         return "%s by %s [%s]" % (self.title, self.author, self.category)
+
+    def get_absolute_url(self):
+        return reverse('article-detail', args=[self.slug])
