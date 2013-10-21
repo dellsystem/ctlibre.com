@@ -172,6 +172,14 @@ body {
         .info {
             //visibility: visible;
         }
+
+        .photo img {
+            opacity: 1.0;
+        }
+
+        .overlay {
+            display: block !important;
+        }
     }
 
     a {
@@ -179,18 +187,8 @@ body {
     }
 
     .photo {
-        &:hover {
-            img {
-                opacity: 1.0;
-            }
-
-            .overlay {
-                display: block !important;
-            }
-        }
-
         .overlay {
-            //display: none;
+            display: none;
             .sans-serif;
             background: rgba(0, 0, 0, 0.5);
             position: absolute;
