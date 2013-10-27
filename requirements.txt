@@ -1,3 +1,5 @@
 Django==1.5.2
 Fabric==1.4.2
 django-thumbs==0.4
+Markdown==2.2.1
+PIL==1.1.7
