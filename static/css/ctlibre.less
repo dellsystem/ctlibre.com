@@ -14,6 +14,16 @@ img {
     border: 0;
 }
 
+a {
+    color: @darkGrey;
+    text-decoration: none;
+
+    &:hover {
+        color: @red;
+        text-decoration: underline;
+    }
+}
+
 .sans-serif {
     font-family: Raleway, Arial, sans-serif;
 }
@@ -165,12 +175,6 @@ body {
     clear: both;
 }
 
-.row + .row {
-    .span4 {
-        margin-top: 30px;
-    }
-}
-
 .row .span4 {
     float: left;
     width: 33.333%;
@@ -230,7 +234,9 @@ body {
 
     .info {
         padding: 0 30px;
+        padding-bottom: 30px;
         color: @darkGrey;
+        font-size: 1.2em;
 
         .headline {
             margin: 15px 0;
@@ -239,6 +245,8 @@ body {
 
         .byline {
             margin-bottom: 15px;
+            font-style: italic;
+            font-size: 0.9em;
         }
     }
 
@@ -287,14 +295,6 @@ body {
             margin-left: 2.0em;
         }
 
-        a {
-            color: @darkGrey;
-
-            &:hover {
-                color: @red;
-            }
-        }
-
         .footnote {
             margin-top: 70px;
             font-size: 0.7em;
@@ -321,10 +321,21 @@ body {
     }
 }
 
+.pagination {
+    clear: both;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
 #footer {
     .wrapper;
     clear: both;
     text-align: center;
     padding-top: 50px;
     padding-bottom: 10px;
+    background: @darkGrey;
+    color: #fff;
+    margin-top: 30px;
+    width: 100%;
 }
