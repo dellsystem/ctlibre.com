@@ -10,6 +10,10 @@ urlpatterns = patterns('',
     url(r'^$', 'ctlibre.views.home', name='home'),
     url(r'^article/(?P<slug>[^/]+)/$', 'news.views.article_detail',
         name='article-detail'),
+    url(r'^category/$', 'news.views.category_detail',
+        name='archives'),
+    url(r'^category/(?P<slug>[^/]+)/$', 'news.views.category_detail',
+        name='category-detail'),
     url(r'^admin/', include(admin.site.urls)),
 )
 

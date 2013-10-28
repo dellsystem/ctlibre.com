@@ -16,6 +16,8 @@ class Author(models.Model):
 class Category(models.Model):
     name = models.CharField(max_length=20)
     slug = models.SlugField()
+    graphic = models.ImageField(upload_to='graphics')
+    description = models.CharField(max_length=255)
 
     class Meta:
         verbose_name_plural = 'Categories'

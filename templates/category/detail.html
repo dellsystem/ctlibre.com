@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block masthead_image %}{{ category.graphic.url }}{% endblock %}
+{% block title %}{{ category.name }}{% endblock %}
+{% block description %}{{ category.description }}{% endblock %}
+
+{% block content %}
+{% for article in articles %}
+{% if forloop.counter0|divisibleby:"3" %}
+<div class="row">
+{% endif %}
+    {% include "article/display.html" %}
+{% if forloop.counter|divisibleby:"3" or forloop.last %}
+</div>
+{% endif %}
+{% endfor %}
+{% endblock %}
