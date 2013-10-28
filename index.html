@@ -8,11 +8,25 @@
     -->
     <title>Cité Libre</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="css/ctlibre.css" type="text/css" />
+    <link rel="stylesheet" href="css/flipclock.css" type="text/css" />
     <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="js/prefixfree.min.js"></script>
+    <script src="js/flipclock.min.js"></script>
     <script>
     $(document).ready(function() {
-        $('#overlay').show();
+        var clock = $('#countdown').FlipClock({
+            autostart: false,
+            countdown: true,
+            clockFace: 'DailyCounter'
+        });
+
+        // Calculate seconds until 12:00am on November 2
+        var countdownDate = new Date(2013, 10, 2, 0, 0, 0, 0);
+        var timeDelta = (countdownDate.getTime() - new Date().getTime()) / 1000;
+        clock.setTime(timeDelta);
+        clock.start();
 
         $('#overlay .close').click(function() {
             $('#overlay').hide();
@@ -24,91 +38,6 @@
         });
     });
     </script>
-    <style type="text/css">
-    body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #000;
-      background-image: url('montreal.jpg');
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-position: right bottom;
-      background-size: 100%;
-      font-family: Raleway, Arial, Helvetica, sans-serif;
-    }
-
-    a {
-        color: #fff;
-        text-decoration: none;
-    }
-
-    a:hover {
-        color: #aaa;
-    }
-
-    #overlay {
-        display: none;
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.7);
-        z-index: 100;
-    }
-
-    #overlay .content {
-        position: absolute;
-        left: 50%;
-        margin-left: -400px;
-        top: 50%;
-        margin-top: -225px;
-        text-align: center;
-    }
-
-    #overlay .close {
-        cursor: pointer;
-    }
-
-    #main {
-        text-align: center;
-        width: 100%;
-        height: 170px;
-        margin-top: 100px;
-    }
-
-    h1 {
-        text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.7);
-        font-size: 120px;
-        margin: 0;
-        letter-spacing: 2px;
-    }
-
-    #social-media {
-        width: 700px;
-        margin: 0 auto;
-        text-align: right;
-    }
-
-    h2 {
-        font-size: 45px;
-        margin-top: 70px;
-        font-weight: normal;
-        text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.2);
-        color: #fff;
-        text-transform: uppercase;
-    }
-
-    .show-promo {
-        text-transform: uppercase;
-    }
-
-    p img {
-        vertical-align: middle;
-    }
-    </style>
   </head>
   <body>
     <div id="overlay">
@@ -133,7 +62,7 @@
         <a href="http://twitter.com/ctlibre" target="_blank"><img src="twitter.png" alt="Twitter" /></a>
         <a href="mailto:ctlibre@ctlibre.com"><img src="email.png" alt="Email" /></a>
       </p>
-      <h2>Octobre // October</h2>
+      <div id="countdown"></div>
       <p><a class='show-promo' href="http://www.youtube.com/watch?v=ZSVVFpxr27A">[ promo video // vid&eacute;o promotionnelle ]</a></p>
     </div>
   </body>
