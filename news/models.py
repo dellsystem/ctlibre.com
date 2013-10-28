@@ -23,10 +23,23 @@ class Category(models.Model):
     def __unicode__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse('article-list', args=[self.slug])
+
 
 class ArticleManager(models.Manager):
-    def get_recent(self, n):
-        return self.filter(is_lead_story=False).order_by('-created_on')[:n]
+    def get_recent(self, n=0, show_lead_story=True):
+        if show_lead_story:
+            articles = self
+        else:
+            articles = self.filter(is_lead_story=False)
+
+        articles = articles.order_by('-created_on')
+
+        if n > 0:
+            return articles[:n]
+        else:
+            return articles
 
 
 class Article(models.Model):
