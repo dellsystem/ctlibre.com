@@ -8,7 +8,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', 'ctlibre.views.home', name='home'),
-    url(r'^article/(?P<slug>[^/]+)', 'news.views.article_detail',
+    url(r'^article/(?P<slug>[^/]+)/$', 'news.views.article_detail',
         name='article-detail'),
     url(r'^admin/', include(admin.site.urls)),
 )
