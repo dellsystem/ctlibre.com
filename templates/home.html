@@ -16,30 +16,9 @@
 {% endblock %}
 
 {% block content %}
-{% for article in main_stories %}
-{% if forloop.counter0|divisibleby:"3" %}
 <div class="row">
-{% endif %}
-    <div class="span4">
-        <a href="{{ article.get_absolute_url }}">
-            <div class="photo">
-                    <img src="{{ article.graphic.url_500x333 }}" />
-                    <div class="overlay">
-                        <p class="date">
-                            {{ article.created_on|date:"F j" }}
-                        </p>
-                        <p class="category">[{{ article.category }}]</p>
-                    </div>
-            </div>
-            <div class="info">
-                <p class="headline">{{ article.title }}</p>
-                <p class="byline">by {{ article.author }}</p>
-                <p>{{ article.description }}</p>
-            </div>
-        </a>
-    </div>
-{% if forloop.counter|divisibleby:"3" %}
+    {% for article in main_stories %}
+        {% include "article/display.html" %}
+    {% endfor %}
 </div>
-{% endif %}
-{% endfor %}
 {% endblock %}

@@ -2,17 +2,9 @@
 
 {% load markup %}
 
-{% block masthead %}
-<div class="photo">
-    <img src="{{ page.graphic.url }}" />
-    <div class="title-wrapper">
-        <div class="title">
-            <h1>{{ page.title }}</h1>
-            <p class="byline">{{ page.description }}</p>
-        </div>
-    </div>
-</div>
-{% endblock %}
+{% block masthead_image %}{{ page.graphic.url }}{% endblock %}
+{% block title %}{{ page.title }}{% endblock %}
+{% block description %}{{ page.description }}{% endblock %}
 
 {% block content %}
 <div id="article">

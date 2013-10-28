@@ -25,6 +25,15 @@
     </div>
     <div id="masthead">
         {% block masthead %}
+        <div class="photo">
+            <img src="{% block masthead_image %}{% endblock %}" />
+        </div>
+        <div class="title-wrapper">
+            <div class="title">
+                <h1>{% block title %}{% endblock %}</h1>
+                <p class="byline">{% block description %}{% endblock %}</p>
+            </div>
+        </div>
         {% endblock %}
     </div>
     <div id="content">
