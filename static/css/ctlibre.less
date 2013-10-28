@@ -14,12 +14,22 @@ img {
     border: 0;
 }
 
+a {
+    color: @darkGrey;
+    text-decoration: none;
+
+    &:hover {
+        color: @red;
+        text-decoration: underline;
+    }
+}
+
 .sans-serif {
-    font-family: Raleway, sans-serif;
+    font-family: Raleway, Arial, sans-serif;
 }
 
 .serif {
-    font-family: Lora, serif;
+    font-family: Lora, Georgia, serif;
 }
 
 body {
@@ -134,12 +144,12 @@ body {
         position: absolute;
         bottom: 0;
         left: 0;
+        right: 0;
     }
 
     .block {
         box-sizing: border-box;
         padding: 30px;
-        width: 100%;
         height: 200px;
         background: rgba(0, 0, 0, 0.5);
         color: #fff;
@@ -224,7 +234,9 @@ body {
 
     .info {
         padding: 0 30px;
+        padding-bottom: 30px;
         color: @darkGrey;
+        font-size: 1.2em;
 
         .headline {
             margin: 15px 0;
@@ -233,6 +245,8 @@ body {
 
         .byline {
             margin-bottom: 15px;
+            font-style: italic;
+            font-size: 0.9em;
         }
     }
 
@@ -281,14 +295,6 @@ body {
             margin-left: 2.0em;
         }
 
-        a {
-            color: @darkGrey;
-
-            &:hover {
-                color: @red;
-            }
-        }
-
         .footnote {
             margin-top: 70px;
             font-size: 0.7em;
@@ -304,10 +310,32 @@ body {
     }
 }
 
+.drop-caps {
+    & > p:first-child:first-letter {
+        float: left;
+        font-size: 5.0em;
+        line-height: 0.7em;
+        padding-top: 0.1em;
+        padding-right: 0.1em;
+        padding-left: 3px;
+    }
+}
+
+.pagination {
+    clear: both;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
 #footer {
     .wrapper;
     clear: both;
     text-align: center;
     padding-top: 50px;
     padding-bottom: 10px;
+    background: @darkGrey;
+    color: #fff;
+    margin-top: 30px;
+    width: 100%;
 }

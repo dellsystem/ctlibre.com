@@ -2,22 +2,14 @@
 
 {% load markup %}
 
-{% block masthead %}
-<div class="photo">
-    <img src="{{ article.graphic.url_1500x1000 }}" />
-    <div class="title-wrapper">
-        <div class="title">
-            <h1>{{ article.title }}</h1>
-            <p class="byline">by {{ article.author }}</p>
-        </div>
-    </div>
-</div>
-{% endblock %}
+{% block masthead_image %}{{ article.graphic.url_1500x1000 }}{% endblock %}
+{% block title %}{{ article.title }}{% endblock %}
+{% block description %}by {{ article.author }}{% endblock %}
 
 {% block content %}
 <div id="article">
     <p class="description">{{ article.description }}</p>
-    <div class="content">
+    <div class="content drop-caps">
         {{ article.content|markdown:"footnotes" }}
     </div>
 </div>

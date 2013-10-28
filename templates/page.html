@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% load markup %}
+
+{% block masthead_image %}{{ page.graphic.url }}{% endblock %}
+{% block title %}{{ page.title }}{% endblock %}
+{% block description %}{{ page.description }}{% endblock %}
+
+{% block content %}
+<div id="article">
+    <div class="content">
+        {{ page.content|markdown:"footnotes" }}
+    </div>
+</div>
+{% endblock %}
