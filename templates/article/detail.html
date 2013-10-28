@@ -9,7 +9,7 @@
 {% block content %}
 <div id="article">
     <p class="description">{{ article.description }}</p>
-    <div class="content">
+    <div class="content drop-caps">
         {{ article.content|markdown:"footnotes" }}
     </div>
 </div>
