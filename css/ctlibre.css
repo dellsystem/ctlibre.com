@@ -77,3 +77,9 @@ p img {
     width: 622px;
     margin: 30px auto;
 }
+
+h2 {
+    margin-top: -70px;
+    font-size: 1.7em;
+    color: #fff;
+}
