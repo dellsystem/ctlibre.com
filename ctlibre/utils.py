@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import get_object_or_404, redirect
 
 
@@ -20,3 +21,16 @@ def force_slug_language(translation_model):
                 return view(request, None)
         return new_view
     return wrap
+
+
+def make_paginator(article_list, request):
+    page_number = request.GET.get('page', 1)
+    paginator = Paginator(article_list, 15)
+    try:
+        articles = paginator.page(page_number)
+    except PageNotAnInteger:
+        articles = paginator.page(1)
+    except EmptyPage:
+        articles = paginator.page(paginator.num_pages)
+
+    return articles
