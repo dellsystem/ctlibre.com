@@ -1,11 +1,13 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 
-from news.models import Article, Category
+from ctlibre.utils import force_slug_language
+from news.models import Article, ArticleTranslation, Category, \
+                        CategoryTranslation
 
 
-def article_detail(request, slug):
-    article = get_object_or_404(Article, slug=slug)
+@force_slug_language(ArticleTranslation)
+def article_detail(request, article):
     context = {
         'article':  article
     }
@@ -13,9 +15,9 @@ def article_detail(request, slug):
     return render(request, 'article/detail.html', context)
 
 
-def category_detail(request, slug=None):
-    if slug is not None:
-        category = get_object_or_404(Category, slug=slug)
+@force_slug_language(CategoryTranslation)
+def category_detail(request, category):
+    if category is not None:
         article_list = category.article_set.get_recent()
     else:
         article_list = Article.objects.get_recent()

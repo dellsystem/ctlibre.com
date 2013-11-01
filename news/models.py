@@ -1,6 +1,7 @@
 from django.core.urlresolvers import reverse
 from django.db import models
 from django_thumbs.db.models import ImageWithThumbsField
+from multilingual_model.models import MultilingualModel, MultilingualTranslation
 
 from news.fields import UniqueBooleanField
 from news.constants import GRAPHIC_SIZES
@@ -13,11 +14,8 @@ class Author(models.Model):
         return self.name
 
 
-class Category(models.Model):
-    name = models.CharField(max_length=20)
-    slug = models.SlugField()
+class Category(MultilingualModel):
     graphic = models.ImageField(upload_to='graphics')
-    description = models.CharField(max_length=255)
 
     class Meta:
         verbose_name_plural = 'Categories'
@@ -27,6 +25,16 @@ class Category(models.Model):
 
     def get_absolute_url(self):
         return reverse('article-list', args=[self.slug])
+
+
+class CategoryTranslation(MultilingualTranslation):
+    parent = models.ForeignKey(Category, related_name='translations')
+    name = models.CharField(max_length=20)
+    slug = models.SlugField()
+    description = models.CharField(max_length=255)
+
+    class Meta:
+        unique_together = ('parent', 'language_code')
 
 
 class ArticleManager(models.Manager):
@@ -44,16 +52,12 @@ class ArticleManager(models.Manager):
             return articles
 
 
-class Article(models.Model):
+class Article(MultilingualModel):
     objects = ArticleManager()
     author = models.ForeignKey(Author)
-    title = models.CharField(max_length=100)
-    description = models.CharField(max_length=255)
-    content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     modified_on = models.DateTimeField(auto_now=True)
     category = models.ForeignKey(Category)
-    slug = models.SlugField()
     graphic = ImageWithThumbsField(upload_to='graphics', sizes=GRAPHIC_SIZES)
     is_lead_story = UniqueBooleanField()
 
@@ -62,3 +66,14 @@ class Article(models.Model):
 
     def get_absolute_url(self):
         return reverse('article-detail', args=[self.slug])
+
+
+class ArticleTranslation(MultilingualTranslation):
+    parent = models.ForeignKey(Article, related_name='translations')
+    title = models.CharField(max_length=100)
+    description = models.CharField(max_length=255)
+    content = models.TextField()
+    slug = models.SlugField()
+
+    class Meta:
+        unique_together = ('parent', 'language_code')

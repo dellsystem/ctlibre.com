@@ -1,5 +1,6 @@
-@darkerGrey: #1a1a1a;
-@darkGrey: #222;
+@darkestGrey: #1a1a1a;
+@darkerGrey: #444;
+@darkGrey: #777;
 @mediumGrey: #aaa;
 @mastheadHeight: 600px;
 @mastheadTopSpace: 50px;
@@ -15,7 +16,7 @@ img {
 }
 
 a {
-    color: @darkGrey;
+    color: @darkerGrey;
     text-decoration: none;
 
     &:hover {
@@ -45,7 +46,7 @@ body {
 #header {
     height: 100px;
     padding: 0 30px;
-    background: @darkerGrey;
+    background: @darkestGrey;
     box-shadow: 0 1px 50px rgba(0, 0, 0, 0.7);
     position: relative;
     z-index: 2;
@@ -235,7 +236,7 @@ body {
     .info {
         padding: 0 30px;
         padding-bottom: 30px;
-        color: @darkGrey;
+        color: @darkerGrey;
         font-size: 1.2em;
 
         .headline {
@@ -334,8 +335,21 @@ body {
     text-align: center;
     padding-top: 50px;
     padding-bottom: 10px;
-    background: @darkGrey;
+    background: @darkestGrey;
     color: #fff;
     margin-top: 30px;
     width: 100%;
+}
+
+#change-language {
+    border: 0;
+    padding: 8px;
+    margin-top: -4px;
+    background: @darkerGrey;
+    color: #fff;
+    cursor: pointer;
+
+    &:hover {
+        background: @darkGrey;
+    }
 }

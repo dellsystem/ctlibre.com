@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <div class="span4">
     <a href="{{ article.get_absolute_url }}">
         <div class="photo">
@@ -11,7 +13,7 @@
         </div>
         <div class="info">
             <p class="headline">{{ article.title }}</p>
-            <p class="byline">by {{ article.author }}</p>
+            <p class="byline">{% trans "by" %} {{ article.author }}</p>
             <p>{{ article.description }}</p>
         </div>
     </a>
