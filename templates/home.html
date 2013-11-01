@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load i18n %}
+
 {% block masthead %}
 <a href="{{ lead_story.get_absolute_url }}">
     <div class="photo">
@@ -8,7 +10,7 @@
     <div class="block-wrapper">
         <div class="block">
             <p class="headline">{{ lead_story.title }}</h2>
-            <p class="byline">by {{ lead_story.author }}</p>
+            <p class="byline">{% trans "by" %} {{ lead_story.author }}</p>
             <p class="description">{{ lead_story.description }}</p>
         </div>
     </div>

@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 
 {% load markup %}
+{% load i18n %}
 
 {% block masthead_image %}{{ article.graphic.url_1500x1000 }}{% endblock %}
 {% block title %}{{ article.title }}{% endblock %}
-{% block description %}by {{ article.author }}{% endblock %}
+{% block description %}{% trans "by" %} {{ article.author }}{% endblock %}
 
 {% block content %}
 <div id="article">

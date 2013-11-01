@@ -14,6 +14,7 @@ urlpatterns = patterns('',
         name='archives'),
     url(r'^category/(?P<slug>[^/]+)/$', 'news.views.category_detail',
         name='category-detail'),
+    url(r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^admin/', include(admin.site.urls)),
 )
 

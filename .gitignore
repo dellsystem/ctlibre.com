@@ -2,3 +2,4 @@ db.sqlite
 media
 *.pyc
 *.swp
+*.mo

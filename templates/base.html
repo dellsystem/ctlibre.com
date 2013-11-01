@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <!doctype html>
 <html>
 <head>
@@ -13,11 +15,30 @@
 <body>
     <div id="header">
         <ul id="menu">
-            <li><a href="/about/">About</a></li>
-            <li><a href="/category/points/">Points</a></li>
-            <li><a href="/category/derivatives/">Derivatives</a></li>
-            <li><a href="#">Parlement libre</a></li>
-            <li><a href="#">Univercite libre</a></li>
+            <li><a href="/about/">
+                {% trans "About" %}
+            </a></li>
+            <li><a href="/category/points/">
+                {% trans "Points" %}
+            </a></li>
+            <li><a href="/category/derivatives/">
+                {% trans "Derivatives" %}
+            </a></li>
+            <li><a href="/parlement-libre/">
+                Parlement libre
+            </a></li>
+            <li><a href="/univercite-libre/">
+                Univercité libre
+            </a></li>
+            <li>
+                <form action="{% url 'set_language' %}" method="post">
+                    {% csrf_token %}
+                    {# "fr" is the new language code #}
+                    <input type="hidden" name="language"
+                           value="{% trans "fr" %}" />
+                    <button id="change-language">{% trans "FR" %}</button>
+                </form>
+            </li>
         </ul>
         <div id="logo">
             <a href="/">
