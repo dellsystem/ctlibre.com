@@ -5,7 +5,7 @@
 <head>
     <title>ctlibre</title>
     <!--[if !IE]> -->
-    <link href="//fonts.googleapis.com/css?family=Lora|Raleway"
+    <link href="//fonts.googleapis.com/css?family=Lora|Montserrat"
           rel="stylesheet" type="text/css" />
     <!-- <![endif]-->
     <link rel="stylesheet/less" type="text/css"
@@ -15,9 +15,6 @@
 <body>
     <div id="header">
         <ul id="menu">
-            <li><a href="/about/">
-                {% trans "About" %}
-            </a></li>
             <li><a href="/category/points/">
                 {% trans "Points" %}
             </a></li>
@@ -29,6 +26,9 @@
             </a></li>
             <li><a href="/univercite-libre/">
                 Univercité libre
+            </a></li>
+            <li><a href="/about/">
+                {% trans "About" %}
             </a></li>
             <li>
                 <form action="{% url 'set_language' %}" method="post">
