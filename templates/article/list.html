@@ -1,0 +1,21 @@
+{% for article in articles %}
+{% if forloop.counter0|divisibleby:"3" %}
+<div class="row">
+{% endif %}
+    {% include "article/display.html" %}
+{% if forloop.counter|divisibleby:"3" or forloop.last %}
+</div>
+{% endif %}
+{% endfor %}
+
+<div class="pagination">
+{% if articles.has_next %}
+    <a href="?page={{ articles.next_page_number }}">&laquo; older</a> ::
+{% endif %}
+    <span class="current">
+        Page {{ articles.number }} of {{ articles.paginator.num_pages }}
+    </span>
+{% if articles.has_previous %}
+    :: <a href="?page={{ articles.previous_page_number }}">newer &raquo;</a>
+{% endif %}
+</div>

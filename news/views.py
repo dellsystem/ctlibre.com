@@ -1,10 +1,20 @@
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.utils.translation import ugettext as _
 
-from ctlibre.utils import force_slug_language
-from news.models import Article, ArticleTranslation, Category, \
+from ctlibre.utils import force_slug_language, make_paginator
+from news.models import Article, ArticleTranslation, Author, Category, \
                         CategoryTranslation
+
+
+def author_detail(request, slug):
+    author = get_object_or_404(Author, slug=slug)
+    articles = make_paginator(author.article_set.get_recent(), request)
+    context = {
+        'author': author,
+        'articles': articles,
+    }
+
+    return render(request, 'author/detail.html', context)
 
 
 @force_slug_language(ArticleTranslation)
@@ -36,14 +46,7 @@ def category_detail(request, category):
             'description': archives_description,
         }
 
-    page_number = request.GET.get('page', 1)
-    paginator = Paginator(article_list, 15)
-    try:
-        articles = paginator.page(page_number)
-    except PageNotAnInteger:
-        articles = paginator.page(1)
-    except EmptyPage:
-        articles = paginator.page(paginator.num_pages)
+    articles = make_paginator(article_list, request)
 
     context = {
         'category': category,

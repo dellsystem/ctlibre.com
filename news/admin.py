@@ -1,8 +1,8 @@
 from django.contrib import admin
 from multilingual_model.admin import TranslationStackedInline
 
-from news.models import Article, ArticleTranslation, Author, Category, \
-                        CategoryTranslation
+from news.models import Article, ArticleTranslation, Author, AuthorTranslation,\
+                        Category, CategoryTranslation
 
 
 class ArticleTranslationInline(TranslationStackedInline):
@@ -12,6 +12,15 @@ class ArticleTranslationInline(TranslationStackedInline):
 
 class ArticleAdmin(admin.ModelAdmin):
     inlines = [ArticleTranslationInline]
+
+
+class AuthorTranslationInline(TranslationStackedInline):
+    model = AuthorTranslation
+
+
+class AuthorAdmin(admin.ModelAdmin):
+    prepopulated_fields = {"slug": ("name",)}
+    inlines = [AuthorTranslationInline]
 
 
 class CategoryTranslationInline(TranslationStackedInline):
@@ -24,5 +33,5 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Article, ArticleAdmin)
-admin.site.register(Author)
+admin.site.register(Author, AuthorAdmin)
 admin.site.register(Category, CategoryAdmin)

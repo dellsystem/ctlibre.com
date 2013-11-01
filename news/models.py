@@ -7,11 +7,24 @@ from news.fields import UniqueBooleanField
 from news.constants import GRAPHIC_SIZES
 
 
-class Author(models.Model):
+class Author(MultilingualModel):
     name = models.CharField(max_length=255)
+    slug = models.SlugField()
+    graphic = models.ImageField(upload_to='graphics')
 
     def __unicode__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('author-detail', args=[self.slug])
+
+
+class AuthorTranslation(MultilingualTranslation):
+    parent = models.ForeignKey(Author, related_name='translations')
+    bio = models.TextField(null=True, blank=True)
+
+    class Meta:
+        unique_together = ('parent', 'language_code')
 
 
 class Category(MultilingualModel):
