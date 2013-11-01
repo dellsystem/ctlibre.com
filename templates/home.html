@@ -23,4 +23,8 @@
         {% include "article/display.html" %}
     {% endfor %}
 </div>
+
+<div id="archives-link">
+    <a href="{% url 'archives' %}">{% trans "Archives" %} &raquo;</a>
+</div>
 {% endblock %}
