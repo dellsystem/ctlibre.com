@@ -24,7 +24,7 @@ class Category(MultilingualModel):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('article-list', args=[self.slug])
+        return reverse('category-detail', args=[self.slug])
 
 
 class CategoryTranslation(MultilingualTranslation):
