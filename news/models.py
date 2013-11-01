@@ -31,7 +31,7 @@ class CategoryTranslation(MultilingualTranslation):
     parent = models.ForeignKey(Category, related_name='translations')
     name = models.CharField(max_length=20)
     slug = models.SlugField()
-    description = models.CharField(max_length=255)
+    description = models.TextField()
 
     class Meta:
         unique_together = ('parent', 'language_code')
