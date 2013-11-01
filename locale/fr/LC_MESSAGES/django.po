@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-01 01:39-0400\n"
+"POT-Creation-Date: 2013-11-01 16:20-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,17 +18,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: templates/base.html:19
-msgid "About"
-msgstr "À propos"
+#: news/views.py:28 templates/home.html:28
+msgid "Archives"
+msgstr "Les archives"
 
-#: templates/base.html:22
+#: news/views.py:29
+msgid "All articles"
+msgstr "Tous les articles"
+
+#: templates/base.html:19
 msgid "Points"
 msgstr "Mise à jour"
 
-#: templates/base.html:25
+#: templates/base.html:22
 msgid "Derivatives"
 msgstr "Revue"
+
+#: templates/base.html:31
+msgid "About"
+msgstr "À propos"
 
 #: templates/base.html:38
 msgid "fr"
@@ -39,6 +47,6 @@ msgid "FR"
 msgstr "EN"
 
 #: templates/home.html:13 templates/article/detail.html:8
-#: templates/article/display.html:16
+#: templates/article/display.html:18
 msgid "by"
 msgstr "par"
