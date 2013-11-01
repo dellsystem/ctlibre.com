@@ -2,7 +2,7 @@
 @darkerGrey: #444;
 @darkGrey: #777;
 @mediumGrey: #aaa;
-@mastheadHeight: 600px;
+@mastheadHeight: 500px;
 @mastheadTopSpace: 50px;
 @red: #a00;
 
@@ -11,22 +11,16 @@
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 img {
     border: 0;
 }
 
-a {
-    color: @darkerGrey;
-    text-decoration: none;
-
-    &:hover {
-        color: @red;
-        text-decoration: underline;
-    }
-}
-
 .sans-serif {
-    font-family: Raleway, Arial, sans-serif;
+    font-family: Montserrat, Arial, sans-serif;
 }
 
 .serif {
@@ -34,7 +28,7 @@ a {
 }
 
 body {
-    font-size: 17px;
+    font-size: 15px;
     .serif;
 }
 
@@ -53,8 +47,12 @@ body {
 }
 
 #logo {
-    width: 270px;
+    width: 100%;
     padding: 20px 0;
+
+    img {
+        max-width: 30%;
+    }
 }
 
 #menu {
@@ -117,15 +115,21 @@ body {
 
     .title-wrapper {
         position: absolute;
-        top: 250px;
+        top: 0;
         width: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        box-sizing: border-box;
+        height: @mastheadHeight;
     }
 
     .title {
-        background: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        top: 50%;
+        margin-top: -26px;
         color: #fff;
-        padding: 20px 0;
-        width: 100%;
+        left: 50%;
+        width: 1000px;
+        margin-left: -500px;
         text-align: center;
 
         h1 {
@@ -136,6 +140,9 @@ body {
         }
 
         .byline {
+            margin-top: 20px;
+            border-top: 1px solid #fff;
+            padding-top: 20px;
             font-style: italic;
             font-size: 1.2em;
         }
@@ -151,12 +158,12 @@ body {
     .block {
         box-sizing: border-box;
         padding: 30px;
-        height: 200px;
+        height: 160px;
         background: rgba(0, 0, 0, 0.5);
         color: #fff;
 
         .headline {
-            font-size: 2.5em;
+            font-size: 2.2em;
             text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
         }
 
@@ -182,14 +189,6 @@ body {
     position: relative;
 
     &:hover {
-        .info {
-            //visibility: visible;
-        }
-
-        .photo img {
-            opacity: 1.0;
-        }
-
         .overlay {
             display: block !important;
         }
@@ -205,17 +204,22 @@ body {
         .overlay {
             display: none;
             .sans-serif;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.4);
             position: absolute;
-            top: 50%;
-            margin-top: -47px;
+            top: 0;
+            bottom: 5px; // not sure why but this makes it fit
             left: 0;
-            width: 100%;
-            text-align: center;
+            right: 0;
             color: #fff;
             text-transform: uppercase;
-            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
-            padding: 20px 0;
+
+            .text {
+                position: absolute;
+                top: 50%;
+                margin-top: -25px;
+                width: 100%;
+                text-align: center;
+            }
 
             .date {
                 font-size: 1.5em;
@@ -235,13 +239,12 @@ body {
 
     .info {
         padding: 0 30px;
-        padding-bottom: 30px;
         color: @darkerGrey;
         font-size: 1.2em;
 
         .headline {
-            margin: 15px 0;
-            font-size: 1.5em;
+            margin-top: 15px;
+            font-size: 1.0em;
         }
 
         .byline {
@@ -351,5 +354,35 @@ body {
 
     &:hover {
         background: @darkGrey;
+    }
+}
+
+#article {
+    a {
+        color: @darkerGrey;
+        text-decoration: none;
+
+        &:hover {
+            color: @red;
+            text-decoration: underline;
+        }
+    }
+}
+
+#archives-link {
+    clear: both;
+    text-align: center;
+    .sans-serif;
+    text-transform: uppercase;
+    font-size: 1.7em;
+    font-weight: bold;
+    padding: 40px 0;
+
+    a {
+        color: @darkerGrey;
+
+        &:hover {
+            color: @darkestGrey;
+        }
     }
 }

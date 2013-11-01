@@ -5,10 +5,12 @@
         <div class="photo">
                 <img src="{{ article.graphic.url_500x333 }}" />
                 <div class="overlay">
-                    <p class="date">
-                        {{ article.created_on|date:"F j" }}
-                    </p>
-                    <p class="category">[{{ article.category }}]</p>
+                    <div class="text">
+                        <p class="date">
+                            {{ article.created_on|date:"F j" }}
+                        </p>
+                        <p class="category">[{{ article.category }}]</p>
+                    </div>
                 </div>
         </div>
         <div class="info">
