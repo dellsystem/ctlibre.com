@@ -13,6 +13,7 @@ def author_detail(request, slug):
         'author': author,
         'articles': articles,
         'title': author.name,
+        'graphic_source': author.graphic_source,
     }
 
     return render(request, 'author/detail.html', context)
@@ -23,6 +24,7 @@ def article_detail(request, article):
     context = {
         'article':  article,
         'title': article.title,
+        'graphic_source': article.graphic_source,
     }
 
     return render(request, 'article/detail.html', context)
@@ -33,6 +35,7 @@ def category_detail(request, category):
     if category is not None:
         article_list = category.article_set.get_recent()
         title = category.name
+        graphic_source = category.graphic_source
     else:
         article_list = Article.objects.get_recent()
 
@@ -40,6 +43,7 @@ def category_detail(request, category):
         title = _('Archives')
         archives_image = '/media/graphics/spiderweb.jpg'
         archives_description = _('All articles')
+        graphic_source = None
 
         category = {
             'graphic': {
@@ -54,6 +58,7 @@ def category_detail(request, category):
         'category': category,
         'articles': articles,
         'title': title,
+        'graphic_source': graphic_source,
     }
 
     return render(request, 'category/detail.html', context)

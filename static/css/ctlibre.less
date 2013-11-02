@@ -111,6 +111,22 @@
                 }
             }
         }
+
+    }
+
+    .graphic-source {
+        font-weight: bold;
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+
+        a {
+            color: rgba(255, 255, 255, 0.7);
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 
     .block-wrapper {
@@ -144,6 +160,10 @@
 
 .row {
     clear: both;
+}
+
+.row + .row .span4 {
+    padding-top: 20px;
 }
 
 .row .span4 {
@@ -277,6 +297,10 @@
     padding-top: 20px;
     text-align: center;
     font-size: 1.2em;
+}
+
+.pagination-placeholder {
+    clear: both;
 }
 
 #change-language {

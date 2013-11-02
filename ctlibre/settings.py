@@ -9,7 +9,7 @@ DEBUG = conf.DEBUG
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    ('Wendy Liu', 'it@ctlibre.com'),
+    ('Wendy Liu', 'ilostwaldo@gmail.com'),
 )
 
 MANAGERS = ADMINS
@@ -26,10 +26,6 @@ DATABASES = {
 }
 
 ALLOWED_HOSTS = conf.ALLOWED_HOSTS
-
-# Hosts/domain names that are valid for this site; required if DEBUG is False
-# See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = []
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -67,7 +63,7 @@ MEDIA_URL = '/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = os.path.join(DIRNAME, '..', 'lol')
+STATIC_ROOT = os.path.join(DIRNAME, '..', '..', 'static')
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
@@ -173,3 +169,9 @@ LOCALE_PATHS = (
 )
 
 CSRF_COOKIE_DOMAIN = conf.COOKIE_DOMAIN
+
+EMAIL_USE_TLS = conf.EMAIL_USE_TLS
+EMAIL_HOST = conf.EMAIL_HOST
+EMAIL_PORT = conf.EMAIL_PORT
+EMAIL_HOST_USER = conf.EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = conf.EMAIL_PASSWORD

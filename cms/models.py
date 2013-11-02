@@ -6,6 +6,7 @@ from multilingual_model.models import MultilingualModel, MultilingualTranslation
 class Page(MultilingualModel):
     custom_template = models.BooleanField(default=False)
     graphic = models.ImageField(upload_to='graphics')
+    graphic_source = models.URLField(null=True, blank=True)
 
     def __unicode__(self):
         return self.title

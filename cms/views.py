@@ -9,6 +9,7 @@ def main(request, page):
     context = {
         'page': page,
         'title': page.title,
+        'graphic_source': page.graphic_source,
     }
 
     return render(request, 'page.html', context)

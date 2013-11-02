@@ -32,11 +32,11 @@
             </a>
         </div>
         <ul id="menu">
-            <li><a href="/category/points/">
-                {% trans "Points" %}
+            <li><a href="/category/ongoing/">
+                {% trans "Ongoing" %}
             </a></li>
-            <li><a href="/category/derivatives/">
-                {% trans "Derivatives" %}
+            <li><a href="/category/journal/">
+                {% trans "Journal" %}
             </a></li>
             <li><a href="/parlement-libre/">
                 Parlement libre
@@ -65,9 +65,23 @@
         </div>
         <div class="title-wrapper">
             <div class="title">
-                <h1>{{ title }}</h1>
+                <h1>
+                    {% if title %}
+                        {{ title }}
+                    {% else %}
+                        {% block title %}{% endblock %}
+                    {% endif %}
+                </h1>
                 <p class="byline">{% block description %}{% endblock %}</p>
             </div>
+
+            {% if graphic_source %}
+            <p class="graphic-source">
+                <a href="{{ graphic_source }}">
+                    {% trans "Photo source" %}
+                </a>
+            </p>
+            {% endif %}
         </div>
         {% endblock %}
     </div>
@@ -83,7 +97,7 @@
             <li><a href="/masthead/">{% trans "Masthead" %}</a></li>
             <li><a href="/legal/">{% trans "Legal" %}</a></li>
             <li><a href="/contact/">
-                {% trans "Speak to Us / Send in Your Work" %}
+                {% trans "Speak to Us / Join Us" %}
             </a></li>
             <li><a href="http://facebook.com/ctlibre">
                 <img src="{{ STATIC_URL }}img/fb.png" alt="facebook" />
@@ -96,5 +110,15 @@
             </a></li>
         </ul>
     </div>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-45372428-1', 'ctlibre.com');
+      ga('send', 'pageview');
+
+    </script>
 </body>
 </html>
