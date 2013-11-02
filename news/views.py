@@ -35,6 +35,7 @@ def category_detail(request, category):
     if category is not None:
         article_list = category.article_set.get_recent()
         title = category.name
+        graphic_source = category.graphic_source
     else:
         article_list = Article.objects.get_recent()
 
@@ -42,6 +43,7 @@ def category_detail(request, category):
         title = _('Archives')
         archives_image = '/media/graphics/spiderweb.jpg'
         archives_description = _('All articles')
+        graphic_source = None
 
         category = {
             'graphic': {
@@ -56,7 +58,7 @@ def category_detail(request, category):
         'category': category,
         'articles': articles,
         'title': title,
-        'graphic_source': category.graphic_source,
+        'graphic_source': graphic_source,
     }
 
     return render(request, 'category/detail.html', context)
