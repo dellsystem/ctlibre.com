@@ -94,3 +94,34 @@ body {
         padding-left: 3px;
     }
 }
+
+#footer {
+    .sans-serif;
+    clear: both;
+    background: @darkestGrey;
+    width: 100%;
+    font-size: 1.2em;
+
+    ul {
+        list-style-type: none;
+        float: right;
+
+        li {
+            float: left;
+            padding: 50px 25px;
+            vertical-align: middle;
+
+            &:last-child {
+                padding-right: 50px;
+            }
+        }
+    }
+
+    a {
+        color: @lightGrey;
+
+        &:hover {
+            color: #fff;
+        }
+    }
+}
