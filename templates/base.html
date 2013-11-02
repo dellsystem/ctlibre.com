@@ -4,16 +4,28 @@
 <html>
 <head>
     <title>ctlibre</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0,
+                   maximum-scale=1.0" />
     <!--[if !IE]> -->
     <link href="//fonts.googleapis.com/css?family=Lora|Montserrat"
           rel="stylesheet" type="text/css" />
     <!-- <![endif]-->
     <link rel="stylesheet/less" type="text/css"
-          href="{{ STATIC_URL }}css/ctlibre.less" />
+          href="{{ STATIC_URL }}css/ctlibre.less"
+          media="only screen and (min-width: 800px)" />
+    <link rel="stylesheet/less" type="text/css"
+          href="{{ STATIC_URL }}css/mobile.less"
+          media="only screen and (max-width: 800px)" >
     <script src="{{ STATIC_URL }}js/less.min.js"></script>
 </head>
 <body>
     <div id="header">
+        <div id="logo">
+            <a href="/">
+                <img src="{{ STATIC_URL }}img/logo.png" alt="ctlibre" />
+            </a>
+        </div>
         <ul id="menu">
             <li><a href="/category/points/">
                 {% trans "Points" %}
@@ -40,11 +52,6 @@
                 </form>
             </li>
         </ul>
-        <div id="logo">
-            <a href="/">
-                <img src="{{ STATIC_URL }}img/logo.png" alt="ctlibre" />
-            </a>
-        </div>
     </div>
     <div id="masthead">
         {% block masthead %}
