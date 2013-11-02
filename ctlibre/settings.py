@@ -9,7 +9,7 @@ DEBUG = conf.DEBUG
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    ('Wendy Liu', 'it@ctlibre.com'),
+    ('Wendy Liu', 'ilostwaldo@gmail.com'),
 )
 
 MANAGERS = ADMINS
@@ -169,3 +169,9 @@ LOCALE_PATHS = (
 )
 
 CSRF_COOKIE_DOMAIN = conf.COOKIE_DOMAIN
+
+EMAIL_USE_TLS = conf.EMAIL_USE_TLS
+EMAIL_HOST = conf.EMAIL_HOST
+EMAIL_PORT = conf.EMAIL_PORT
+EMAIL_HOST_USER = conf.EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = conf.EMAIL_PASSWORD
