@@ -11,6 +11,7 @@ class Author(MultilingualModel):
     name = models.CharField(max_length=255)
     slug = models.SlugField()
     graphic = models.ImageField(upload_to='graphics')
+    graphic_source = models.URLField(blank=True, null=True)
 
     def __unicode__(self):
         return self.name
@@ -29,6 +30,7 @@ class AuthorTranslation(MultilingualTranslation):
 
 class Category(MultilingualModel):
     graphic = models.ImageField(upload_to='graphics')
+    graphic_source = models.URLField(blank=True, null=True)
 
     class Meta:
         verbose_name_plural = 'Categories'
@@ -72,6 +74,7 @@ class Article(MultilingualModel):
     modified_on = models.DateTimeField(auto_now=True)
     category = models.ForeignKey(Category)
     graphic = ImageWithThumbsField(upload_to='graphics', sizes=GRAPHIC_SIZES)
+    graphic_source = models.URLField(blank=True, null=True)
     is_lead_story = UniqueBooleanField()
 
     def __unicode__(self):

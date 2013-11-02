@@ -74,6 +74,14 @@
                 </h1>
                 <p class="byline">{% block description %}{% endblock %}</p>
             </div>
+
+            {% if graphic_source %}
+            <p class="graphic-source">
+                <a href="{{ graphic_source }}">
+                    {% trans "Photo source" %}
+                </a>
+            </p>
+            {% endif %}
         </div>
         {% endblock %}
     </div>

@@ -13,6 +13,7 @@ def author_detail(request, slug):
         'author': author,
         'articles': articles,
         'title': author.name,
+        'graphic_source': author.graphic_source,
     }
 
     return render(request, 'author/detail.html', context)
@@ -23,6 +24,7 @@ def article_detail(request, article):
     context = {
         'article':  article,
         'title': article.title,
+        'graphic_source': article.graphic_source,
     }
 
     return render(request, 'article/detail.html', context)
@@ -54,6 +56,7 @@ def category_detail(request, category):
         'category': category,
         'articles': articles,
         'title': title,
+        'graphic_source': category.graphic_source,
     }
 
     return render(request, 'category/detail.html', context)
