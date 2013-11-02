@@ -1,8 +1,11 @@
 import os
 
+from ctlibre import conf
+
+
 DIRNAME = os.path.dirname(__file__)
 
-DEBUG = True
+DEBUG = conf.DEBUG
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -13,15 +16,16 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'db.sqlite',                      # Or path to database file if using sqlite3.
-        # The following settings are not used with sqlite3:
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': '',                      # Set to empty string for default.
+        'ENGINE': conf.DB_ENGINE,
+        'NAME': conf.DB_NAME,
+        'USER': conf.DB_USER,
+        'PASSWORD': conf.DB_PASSWORD,
+        'HOST': conf.DB_HOST,
+        'PORT': conf.DB_PORT,
     }
 }
+
+ALLOWED_HOSTS = conf.ALLOWED_HOSTS
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
@@ -86,8 +90,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'pkn*m*enw&020m+2s)!*re8#v_#3cg)1u5gayb7aif91+r1ov&'
-
+SECRET_KEY = conf.SECRET_KEY
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
@@ -129,7 +132,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'news',
     'cms',
-)
+) + conf.INSTALLED_APPS
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
@@ -168,3 +171,5 @@ LANGUAGES = (
 LOCALE_PATHS = (
     os.path.join(DIRNAME, '..', 'locale'),
 )
+
+CSRF_COOKIE_DOMAIN = conf.COOKIE_DOMAIN

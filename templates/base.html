@@ -17,13 +17,12 @@
     <link href="//fonts.googleapis.com/css?family=Lora|Montserrat"
           rel="stylesheet" type="text/css" />
     <!-- <![endif]-->
-    <link rel="stylesheet/less" type="text/css"
-          href="{{ STATIC_URL }}css/ctlibre.less"
-          media="only screen and (min-width: 800px)" />
-    <link rel="stylesheet/less" type="text/css"
-          href="{{ STATIC_URL }}css/mobile.less"
-          media="only screen and (max-width: 800px)" >
-    <script src="{{ STATIC_URL }}js/less.min.js"></script>
+    <link rel="stylesheet" type="text/css"
+          href="{{ STATIC_URL }}css/ctlibre.css"
+          media="only screen and (min-width: 1000px)" />
+    <link rel="stylesheet" type="text/css"
+          href="{{ STATIC_URL }}css/mobile.css"
+          media="only screen and (max-width: 1000px)" >
 </head>
 <body>
     <div id="header">
@@ -78,6 +77,9 @@
     </div>
     <div id="footer">
         <ul>
+            <li><a href="https://github.com/dellsystem/ctlibre.com">
+                {% trans "Source on Github" %}
+            </a></li>
             <li><a href="/masthead/">{% trans "Masthead" %}</a></li>
             <li><a href="/legal/">{% trans "Legal" %}</a></li>
             <li><a href="/contact/">

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-01 16:20-0400\n"
+"POT-Creation-Date: 2013-11-02 02:30-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,33 +18,49 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: news/views.py:28 templates/home.html:28
+#: news/views.py:40 templates/home.html:28
 msgid "Archives"
 msgstr "Les archives"
 
-#: news/views.py:29
+#: news/views.py:42
 msgid "All articles"
 msgstr "Tous les articles"
 
-#: templates/base.html:19
+#: templates/base.html:36
 msgid "Points"
 msgstr "Mise à jour"
 
-#: templates/base.html:22
+#: templates/base.html:39
 msgid "Derivatives"
 msgstr "Revue"
 
-#: templates/base.html:31
+#: templates/base.html:48
 msgid "About"
 msgstr "À propos"
 
-#: templates/base.html:38
+#: templates/base.html:55
 msgid "fr"
 msgstr "en"
 
-#: templates/base.html:39
+#: templates/base.html:56
 msgid "FR"
 msgstr "EN"
+
+#: templates/base.html:81
+msgid "Source on Github"
+msgstr "Github"
+
+#: templates/base.html:83
+msgid "Masthead"
+msgstr "Titre"
+
+#: templates/base.html:84
+msgid "Legal"
+msgstr "Mention légal"
+
+#: templates/base.html:86
+msgid "Speak to Us / Send in Your Work"
+msgstr "Nous Rejoindre / Envoyer-Nous Votre Travail"
 
 #: templates/home.html:13 templates/article/detail.html:8
 #: templates/article/display.html:18
