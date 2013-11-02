@@ -14,7 +14,7 @@ body{font-size:15px;font-family:Lora, Georgia, serif;background:#1a1a1a;}
 #article .content ul,#article .content ol{margin-left:1.0em;}
 #article .content .footnote{margin-top:70px;font-size:0.7em;}#article .content .footnote ol{margin-top:100px;}#article .content .footnote ol li+li{padding-top:10px;}
 .drop-caps>p:first-child:first-letter{float:left;font-size:5.0em;line-height:0.7em;padding-top:0.1em;padding-right:0.1em;padding-left:3px;}
-#footer{font-family:Montserrat,Arial,sans-serif;clear:both;background:#1a1a1a;width:100%;font-size:1.2em;}#footer ul{list-style-type:none;float:right;}#footer ul li{float:left;padding:50px 25px;vertical-align:middle;}#footer ul li:last-child{padding-right:50px;}
+#footer{font-family:Montserrat,Arial,sans-serif;clear:both;background:#1a1a1a;width:100%;font-size:1.2em;}#footer ul{list-style-type:none;float:right;}#footer ul li{float:left;padding:40px 20px;vertical-align:middle;}#footer ul li:last-child{padding-right:50px;}
 #footer a{color:#dddddd;}#footer a:hover{color:#fff;}
 #header{height:100px;padding:0 30px;background:#1a1a1a;box-shadow:0 1px 50px rgba(0, 0, 0, 0.7);position:relative;z-index:2;}
 #logo{float:left;padding:20px 0;}
@@ -28,7 +28,7 @@ body{font-size:15px;font-family:Lora, Georgia, serif;background:#1a1a1a;}
 #masthead .title-wrapper{position:absolute;top:0;width:100%;background:rgba(0, 0, 0, 0.4);box-sizing:border-box;height:500px;}
 #masthead .title{position:absolute;top:50%;margin-top:-26px;color:#fff;left:50%;width:1000px;margin-left:-500px;text-align:center;}#masthead .title h1{font-family:Montserrat,Arial,sans-serif;text-transform:uppercase;font-size:3.0em;}
 #masthead .title .byline{margin-top:20px;border-top:1px solid #fff;padding-top:20px;font-style:italic;font-size:1.2em;}#masthead .title .byline a{color:white;}#masthead .title .byline a:hover{text-decoration:underline;}
-#masthead .graphic-source{font-weight:bold;position:absolute;right:10px;bottom:10px;}#masthead .graphic-source a{color:#fff;}#masthead .graphic-source a:hover{text-decoration:underline;}
+#masthead .graphic-source{font-weight:bold;position:absolute;right:10px;bottom:10px;}#masthead .graphic-source a{color:rgba(255, 255, 255, 0.7);}#masthead .graphic-source a:hover{text-decoration:underline;}
 #masthead .block-wrapper{position:absolute;bottom:0;left:0;right:0;}
 #masthead .block{box-sizing:border-box;padding:30px;background:rgba(0, 0, 0, 0.5);color:#fff;}#masthead .block .headline{font-size:2.2em;}
 #masthead .block .byline{font-family:Lora, Georgia, serif;font-style:italic;margin:10px 0;}
