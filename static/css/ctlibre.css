@@ -28,11 +28,13 @@ body{font-size:15px;font-family:Lora, Georgia, serif;background:#1a1a1a;}
 #masthead .title-wrapper{position:absolute;top:0;width:100%;background:rgba(0, 0, 0, 0.4);box-sizing:border-box;height:500px;}
 #masthead .title{position:absolute;top:50%;margin-top:-26px;color:#fff;left:50%;width:1000px;margin-left:-500px;text-align:center;}#masthead .title h1{font-family:Montserrat,Arial,sans-serif;text-transform:uppercase;font-size:3.0em;}
 #masthead .title .byline{margin-top:20px;border-top:1px solid #fff;padding-top:20px;font-style:italic;font-size:1.2em;}#masthead .title .byline a{color:white;}#masthead .title .byline a:hover{text-decoration:underline;}
+#masthead .graphic-source{font-weight:bold;position:absolute;right:10px;bottom:10px;}#masthead .graphic-source a{color:#fff;}#masthead .graphic-source a:hover{text-decoration:underline;}
 #masthead .block-wrapper{position:absolute;bottom:0;left:0;right:0;}
 #masthead .block{box-sizing:border-box;padding:30px;background:rgba(0, 0, 0, 0.5);color:#fff;}#masthead .block .headline{font-size:2.2em;}
 #masthead .block .byline{font-family:Lora, Georgia, serif;font-style:italic;margin:10px 0;}
 #masthead .block .description{font-size:1.3em;}
 .row{clear:both;}
+.row+.row .span4{padding-top:20px;}
 .row .span4{float:left;width:33.333%;position:relative;}.row .span4:hover .overlay{display:block !important;}
 .row .span4 a{text-decoration:none;}
 .row .span4 .photo{position:relative;}.row .span4 .photo .overlay{display:none;font-family:Montserrat,Arial,sans-serif;background:rgba(0, 0, 0, 0.4);position:absolute;top:0;bottom:5px;left:0;right:0;color:#fff;text-transform:uppercase;}.row .span4 .photo .overlay .text{position:absolute;top:50%;margin-top:-25px;width:100%;text-align:center;}
@@ -50,5 +52,6 @@ body{font-size:15px;font-family:Lora, Georgia, serif;background:#1a1a1a;}
 #article .content p img,#article .content ul img{width:100%;}
 #article .content p+p{padding-top:0;}
 .pagination{clear:both;padding-top:20px;text-align:center;font-size:1.2em;}
+.pagination-placeholder{clear:both;}
 #change-language{border:0;padding:8px;margin-top:-4px;background:#444444;color:#fff;cursor:pointer;}#change-language:hover{background:#777777;}
 #archives-link{clear:both;text-align:center;font-family:Montserrat,Arial,sans-serif;text-transform:uppercase;font-size:1.7em;font-weight:bold;padding:40px 0;}#archives-link a{color:#444444;}#archives-link a:hover{color:#1a1a1a;}
