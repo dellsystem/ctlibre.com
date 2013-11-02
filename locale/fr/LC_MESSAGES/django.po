@@ -3,12 +3,9 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
-msgid ""
-msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-02 19:15+0000\n"
+"POT-Creation-Date: 2013-11-02 19:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -63,8 +60,8 @@ msgid "Legal"
 msgstr "Mention légal"
 
 #: templates/base.html:100
-msgid "Speak to Us / Send in Your Work"
-msgstr "Nous Rejoindre / Envoyer-Nous Votre Travail"
+msgid "Speak to Us / Join Us"
+msgstr "Nous Rejoindre"
 
 #: templates/home.html:13 templates/article/detail.html:8
 #: templates/article/display.html:18
