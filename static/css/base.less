@@ -22,6 +22,11 @@ img {
 body {
     font-size: 15px;
     .serif;
+    background: @darkestGrey;
+}
+
+#content {
+    background: #fff;
 }
 
 .wrapper {
@@ -29,3 +34,63 @@ body {
     margin: 0 auto;
 }
 
+#article .content {
+    .caption {
+        text-align: center;
+        font-style: italic;
+        padding-top: 0;
+    }
+
+    h2 {
+        text-transform: uppercase;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 1.9em;
+    }
+
+    h3 {
+        text-align: center;
+        font-weight: normal;
+        color: @mediumGrey;
+        margin-bottom: 20px;
+        font-size: 1.4em;
+    }
+
+    h4 {
+        font-size: 1.2em;
+    }
+
+    blockquote {
+        color: @darkGrey;
+        padding: 20px;
+        border-left: 5px solid @lightGrey;
+    }
+
+    ul, ol {
+        margin-left: 1.0em;
+    }
+
+    .footnote {
+        margin-top: 70px;
+        font-size: 0.7em;
+
+        ol {
+            margin-top: 100px;
+
+            li + li {
+                padding-top: 10px;
+            }
+        }
+    }
+}
+
+.drop-caps {
+    & > p:first-child:first-letter {
+        float: left;
+        font-size: 5.0em;
+        line-height: 0.7em;
+        padding-top: 0.1em;
+        padding-right: 0.1em;
+        padding-left: 3px;
+    }
+}
