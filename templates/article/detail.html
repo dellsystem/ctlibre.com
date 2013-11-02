@@ -6,7 +6,11 @@
 {% block masthead_image %}{{ article.graphic.url_1500x1000 }}{% endblock %}
 {% block description %}
     {% trans "by" %}
-    <a href="{{ article.author.get_absolute_url }}">{{ article.author }}</a>
+    <a href="{{ article.author.get_absolute_url }}">{{ article.author }}</a>.
+    {{ article.created_on|date:"E j, Y" }}
+    <a href="{{ article.category.get_absolute_url }}">
+        [{{ article.category.name.upper }}]
+    </a>
 {% endblock %}
 
 {% block content %}
