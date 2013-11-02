@@ -8,6 +8,7 @@ from ctlibre.utils import force_slug_language
 def main(request, page):
     context = {
         'page': page,
+        'title': page.title,
     }
 
     return render(request, 'page.html', context)

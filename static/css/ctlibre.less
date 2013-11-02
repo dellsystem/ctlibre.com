@@ -27,10 +27,9 @@
 
         a {
             text-decoration: none;
-            color: #ccc;
+            color: @lightGrey;
             text-transform: uppercase;
             font-weight: bold;
-            //text-shadow: 1px 2px #fff;
 
             &:hover {
                 color: #fff;
@@ -68,7 +67,6 @@
     }
 
     .photo img {
-        margin-top: -120px;
         width: 100%;
         opacity: 0.85;
     }
@@ -96,7 +94,6 @@
             .sans-serif;
             text-transform: uppercase;
             font-size: 3.0em;
-            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
         }
 
         .byline {
@@ -126,13 +123,11 @@
     .block {
         box-sizing: border-box;
         padding: 30px;
-        height: 160px;
         background: rgba(0, 0, 0, 0.5);
         color: #fff;
 
         .headline {
             font-size: 2.2em;
-            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
         }
 
         .byline {
@@ -242,6 +237,14 @@
         padding: 100px 0;
     }
 
+    a {
+        color: @red;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
     .content {
         padding: 100px 0;
         font-size: 1.6em;
@@ -263,33 +266,9 @@
             }
         }
 
-        ul {
-            margin-left: 2.0em;
+        p + p {
+            padding-top: 0;
         }
-
-        .footnote {
-            margin-top: 70px;
-            font-size: 0.7em;
-
-            ol {
-                margin-top: 100px;
-
-                li + li {
-                    padding-top: 10px;
-                }
-            }
-        }
-    }
-}
-
-.drop-caps {
-    & > p:first-child:first-letter {
-        float: left;
-        font-size: 5.0em;
-        line-height: 0.7em;
-        padding-top: 0.1em;
-        padding-right: 0.1em;
-        padding-left: 3px;
     }
 }
 
@@ -298,18 +277,6 @@
     padding-top: 20px;
     text-align: center;
     font-size: 1.2em;
-}
-
-#footer {
-    .wrapper;
-    clear: both;
-    text-align: center;
-    padding-top: 50px;
-    padding-bottom: 10px;
-    background: @darkestGrey;
-    color: #fff;
-    margin-top: 30px;
-    width: 100%;
 }
 
 #change-language {
@@ -322,18 +289,6 @@
 
     &:hover {
         background: @darkGrey;
-    }
-}
-
-#article {
-    a {
-        color: @darkerGrey;
-        text-decoration: none;
-
-        &:hover {
-            color: @red;
-            text-decoration: underline;
-        }
     }
 }
 

@@ -3,7 +3,13 @@
 <!doctype html>
 <html>
 <head>
-    <title>ctlibre</title>
+    <title>
+        {% if title %}
+            {{ title }} ― Cité Libre
+        {% else %}
+            Cité Libre ― Free your city
+        {% endif %}
+    </title>
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0,
                    maximum-scale=1.0" />
@@ -60,7 +66,7 @@
         </div>
         <div class="title-wrapper">
             <div class="title">
-                <h1>{% block title %}{% endblock %}</h1>
+                <h1>{{ title }}</h1>
                 <p class="byline">{% block description %}{% endblock %}</p>
             </div>
         </div>
@@ -71,7 +77,22 @@
         {% endblock %}
     </div>
     <div id="footer">
-        <p>footer</p>
+        <ul>
+            <li><a href="/masthead/">{% trans "Masthead" %}</a></li>
+            <li><a href="/legal/">{% trans "Legal" %}</a></li>
+            <li><a href="/contact/">
+                {% trans "Speak to Us / Send in Your Work" %}
+            </a></li>
+            <li><a href="http://facebook.com/ctlibre">
+                <img src="{{ STATIC_URL }}img/fb.png" alt="facebook" />
+            </a></li>
+            <li><a href="http://twitter.com/ctlibre">
+                <img src="{{ STATIC_URL }}img/twitter.png" alt="twitter" />
+            </a></li>
+            <li><a href="mailto:ctlibre@ctlibre.com">
+                <img src="{{ STATIC_URL }}img/email.png" alt="email" />
+            </a></li>
+        </ul>
     </div>
 </body>
 </html>
