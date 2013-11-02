@@ -65,7 +65,13 @@
         </div>
         <div class="title-wrapper">
             <div class="title">
-                <h1>{{ title }}</h1>
+                <h1>
+                    {% if title %}
+                        {{ title }}
+                    {% else %}
+                        {% block title %}{% endblock %}
+                    {% endif %}
+                </h1>
                 <p class="byline">{% block description %}{% endblock %}</p>
             </div>
         </div>
