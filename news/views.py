@@ -12,6 +12,7 @@ def author_detail(request, slug):
     context = {
         'author': author,
         'articles': articles,
+        'title': author.name,
     }
 
     return render(request, 'author/detail.html', context)
@@ -20,7 +21,8 @@ def author_detail(request, slug):
 @force_slug_language(ArticleTranslation)
 def article_detail(request, article):
     context = {
-        'article':  article
+        'article':  article,
+        'title': article.title,
     }
 
     return render(request, 'article/detail.html', context)
@@ -30,19 +32,19 @@ def article_detail(request, article):
 def category_detail(request, category):
     if category is not None:
         article_list = category.article_set.get_recent()
+        title = category.name
     else:
         article_list = Article.objects.get_recent()
 
         # Temporary - until I found a better way of storing this
+        title = _('Archives')
         archives_image = '/media/graphics/spiderweb.jpg'
-        archives_name = _('Archives')
         archives_description = _('All articles')
 
         category = {
             'graphic': {
                 'url': archives_image
             },
-            'name': archives_name,
             'description': archives_description,
         }
 
@@ -51,6 +53,7 @@ def category_detail(request, category):
     context = {
         'category': category,
         'articles': articles,
+        'title': title,
     }
 
     return render(request, 'category/detail.html', context)

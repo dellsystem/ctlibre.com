@@ -4,7 +4,6 @@
 {% load i18n %}
 
 {% block masthead_image %}{{ article.graphic.url_1500x1000 }}{% endblock %}
-{% block title %}{{ article.title }}{% endblock %}
 {% block description %}
     {% trans "by" %}
     <a href="{{ article.author.get_absolute_url }}">{{ article.author }}</a>

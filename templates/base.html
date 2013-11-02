@@ -3,7 +3,13 @@
 <!doctype html>
 <html>
 <head>
-    <title>ctlibre</title>
+    <title>
+        {% if title %}
+            {{ title }} ― Cité Libre
+        {% else %}
+            Cité Libre ― Free your city
+        {% endif %}
+    </title>
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0,
                    maximum-scale=1.0" />
@@ -60,7 +66,7 @@
         </div>
         <div class="title-wrapper">
             <div class="title">
-                <h1>{% block title %}{% endblock %}</h1>
+                <h1>{{ title }}</h1>
                 <p class="byline">{% block description %}{% endblock %}</p>
             </div>
         </div>
