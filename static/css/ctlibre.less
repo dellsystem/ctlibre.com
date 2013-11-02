@@ -1,41 +1,5 @@
-@darkestGrey: #1a1a1a;
-@darkerGrey: #444;
-@darkGrey: #777;
-@mediumGrey: #aaa;
-@mastheadHeight: 500px;
-@mastheadTopSpace: 50px;
-@red: #a00;
-
-* {
-    padding: 0;
-    margin: 0;
-}
-
-a {
-    text-decoration: none;
-}
-
-img {
-    border: 0;
-}
-
-.sans-serif {
-    font-family: Montserrat, Arial, sans-serif;
-}
-
-.serif {
-    font-family: Lora, Georgia, serif;
-}
-
-body {
-    font-size: 15px;
-    .serif;
-}
-
-.wrapper {
-    width: 1000px;
-    margin: 0 auto;
-}
+@import "variables.less";
+@import "base.less";
 
 #header {
     height: 100px;
@@ -47,12 +11,8 @@ body {
 }
 
 #logo {
-    width: 100%;
+    float: left;
     padding: 20px 0;
-
-    img {
-        max-width: 30%;
-    }
 }
 
 #menu {
