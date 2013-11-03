@@ -41,9 +41,9 @@ def category_detail(request, category):
 
         # Temporary - until I found a better way of storing this
         title = _('Archives')
-        archives_image = '/media/graphics/spiderweb.jpg'
+        archives_image = '/media/graphics/archives.jpg'
         archives_description = _('All articles')
-        graphic_source = None
+        graphic_source = 'http://www.flickr.com/photos/glynlowe/8494249993/'
 
         category = {
             'graphic': {
