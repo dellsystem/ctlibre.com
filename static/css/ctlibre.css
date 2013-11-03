@@ -47,7 +47,7 @@ body{font-size:15px;font-family:Lora, Georgia, serif;background:#1a1a1a;}
 .row .span4:last-child{margin-right:0;}
 #article{width:1000px;margin:0 auto;}#article .description{font-size:1.8em;text-align:center;font-style:italic;border-bottom:1px double #aaaaaa;padding:100px 0;}
 #article a{color:#aa0000;}#article a:hover{text-decoration:underline;}
-#article .content{padding:100px 0;font-size:1.6em;line-height:1.5;}#article .content p,#article .content ul{padding:30px 0;}#article .content p:first-child,#article .content ul:first-child{padding-top:0;}
+#article .content{padding:100px 0;font-size:1.5em;line-height:1.5;}#article .content p,#article .content ul{padding:30px 0;}#article .content p:first-child,#article .content ul:first-child{padding-top:0;}
 #article .content p:last-child,#article .content ul:last-child{padding-bottom:0;}
 #article .content p img,#article .content ul img{width:100%;}
 #article .content p+p{padding-top:0;}
