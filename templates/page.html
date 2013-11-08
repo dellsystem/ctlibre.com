@@ -10,7 +10,7 @@
 <div id="article">
     <div class="content">
         {% if page.custom_template %}
-            {% with "pages/"|add:page.slug|add:".html" as template_file %}
+            {% with "pages/"|add:page.slug_en|add:".html" as template_file %}
                 {% include template_file %}
             {% endwith %}
         {% endif %}
