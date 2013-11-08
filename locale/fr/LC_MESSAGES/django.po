@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-02 19:26+0000\n"
+"POT-Creation-Date: 2013-11-07 19:57-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: news/views.py:42 templates/home.html:28
+#: news/views.py:43 templates/home.html:28
 msgid "Archives"
 msgstr "Les archives"
 
-#: news/views.py:44
+#: news/views.py:45
 msgid "All articles"
 msgstr "Tous les articles"
 
@@ -70,3 +70,7 @@ msgstr "Nous Rejoindre"
 #: templates/article/display.html:18
 msgid "by"
 msgstr "par"
+
+#: templates/pages/masthead.html:2
+msgid "Board of directors"
+msgstr "Conseil d'administration"
