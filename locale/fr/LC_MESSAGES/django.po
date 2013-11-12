@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-07 19:57-0500\n"
+"POT-Creation-Date: 2013-11-12 04:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,10 +67,34 @@ msgid "Speak to Us / Join Us"
 msgstr "Nous Rejoindre"
 
 #: templates/home.html:13 templates/article/detail.html:8
-#: templates/article/display.html:18
+#: templates/article/display.html:18 templates/pages/masthead.html:8
 msgid "by"
 msgstr "par"
 
-#: templates/pages/masthead.html:2
+#: templates/pages/masthead.html:4
 msgid "Board of directors"
 msgstr "Conseil d'administration"
+
+#: templates/pages/masthead.html:10
+msgid "Publisher"
+msgstr "Éditeur"
+
+#: templates/pages/masthead.html:18
+msgid "Associate Publisher"
+msgstr "Éditeur Adjoint"
+
+#: templates/pages/masthead.html:26
+msgid "IT Director"
+msgstr "Directeur Informatique"
+
+#: templates/pages/masthead.html:34
+msgid "Managing Editor"
+msgstr "Directeur de Rédaction"
+
+#: templates/pages/masthead.html:42
+msgid "English Editor"
+msgstr "Rédacteur Anglais"
+
+#: templates/pages/masthead.html:50
+msgid "French Editor"
+msgstr "Rédacteur Français"
