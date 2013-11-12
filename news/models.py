@@ -27,6 +27,9 @@ class AuthorTranslation(MultilingualTranslation):
     class Meta:
         unique_together = ('parent', 'language_code')
 
+    def __unicode__(self):
+        return self.get_language_code_display()
+
 
 class Category(MultilingualModel):
     graphic = models.ImageField(upload_to='graphics')
@@ -50,6 +53,9 @@ class CategoryTranslation(MultilingualTranslation):
 
     class Meta:
         unique_together = ('parent', 'language_code')
+
+    def __unicode__(self):
+        return self.get_language_code_display()
 
 
 class ArticleManager(models.Manager):
@@ -93,3 +99,6 @@ class ArticleTranslation(MultilingualTranslation):
 
     class Meta:
         unique_together = ('parent', 'language_code')
+
+    def __unicode__(self):
+        return self.get_language_code_display()
