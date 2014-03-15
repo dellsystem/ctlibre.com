@@ -7,7 +7,9 @@
 {% block description %}
     {% trans "by" %}
     <a href="{{ article.author.get_absolute_url }}">{{ article.author }}</a>.
-    {{ article.created_on|date:"E j, Y" }}
+    <span title="{{ article.created_on|date:"E j, Y" }}">
+        {{ article.get_season }}
+    </span>
     <a href="{{ article.category.get_absolute_url }}">
         [{{ article.category.name.upper }}]
     </a>
