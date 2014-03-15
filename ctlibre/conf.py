@@ -16,3 +16,8 @@ ALLOWED_HOSTS = [
 ]
 
 INSTALLED_APPS = ()
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'youremail@gmail.com'
+EMAIL_PASSWORD = 'your email password'
