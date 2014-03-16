@@ -7,7 +7,7 @@
                 <div class="overlay">
                     <div class="text">
                         <p class="date">
-                            {{ article.created_on|date:"F j" }}
+                            {{ article.get_season }}
                         </p>
                         <p class="category">[{{ article.category }}]</p>
                     </div>
