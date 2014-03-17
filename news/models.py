@@ -4,7 +4,7 @@ from django_thumbs.db.models import ImageWithThumbsField
 from multilingual_model.models import MultilingualModel, MultilingualTranslation
 
 from news.fields import UniqueBooleanField
-from news.constants import GRAPHIC_SIZES
+from news.constants import GRAPHIC_SIZES, SEASON_NAMES
 
 
 class Author(MultilingualModel):
@@ -26,6 +26,9 @@ class AuthorTranslation(MultilingualTranslation):
 
     class Meta:
         unique_together = ('parent', 'language_code')
+
+    def __unicode__(self):
+        return self.get_language_code_display()
 
 
 class Category(MultilingualModel):
@@ -50,6 +53,9 @@ class CategoryTranslation(MultilingualTranslation):
 
     class Meta:
         unique_together = ('parent', 'language_code')
+
+    def __unicode__(self):
+        return self.get_language_code_display()
 
 
 class ArticleManager(models.Manager):
@@ -83,6 +89,17 @@ class Article(MultilingualModel):
     def get_absolute_url(self):
         return reverse('article-detail', args=[self.slug])
 
+    def get_season(self):
+        """Returns a string indicating the season in which it was published.
+        For example, "Winter 2014"."""
+        date = self.created_on.date()
+
+        # Figure out the season from the month
+        season_index = (date.month - 1) / 4
+        season = SEASON_NAMES[season_index]
+
+        return "%s %d" % (season, date.year)
+
 
 class ArticleTranslation(MultilingualTranslation):
     parent = models.ForeignKey(Article, related_name='translations')
@@ -93,3 +110,6 @@ class ArticleTranslation(MultilingualTranslation):
 
     class Meta:
         unique_together = ('parent', 'language_code')
+
+    def __unicode__(self):
+        return self.get_language_code_display()

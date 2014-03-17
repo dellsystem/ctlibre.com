@@ -24,3 +24,6 @@ class PageTranslation(MultilingualTranslation):
 
     class Meta:
         unique_together = ('parent', 'language_code')
+
+    def __unicode__(self):
+        return self.get_language_code_display()
