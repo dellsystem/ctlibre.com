@@ -95,7 +95,7 @@ class Article(MultilingualModel):
         date = self.created_on.date()
 
         # Figure out the season from the month
-        season_index = (date.month - 1) / 4
+        season_index = (date.month - 1) / 3
         season = SEASON_NAMES[season_index]
 
         return "%s %d" % (season, date.year)
