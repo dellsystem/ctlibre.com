@@ -27,7 +27,7 @@ body{font-size:15px;font-family:Lora, Georgia, serif;background:#1a1a1a;}
 #masthead .photo{position:absolute;width:100%;}
 #masthead .photo img{width:100%;opacity:0.85;}
 #masthead .title-wrapper{position:absolute;top:0;width:100%;background:rgba(0, 0, 0, 0.4);box-sizing:border-box;height:500px;}
-#masthead .title{position:absolute;top:50%;margin-top:-26px;color:#fff;left:50%;width:1000px;margin-left:-500px;text-align:center;}#masthead .title h1{font-family:Montserrat,Arial,sans-serif;text-transform:uppercase;font-size:3.0em;}
+#masthead .title{position:relative;top:50%;transform:translateY(-50%);-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);color:#fff;left:50%;width:1000px;margin-left:-500px;text-align:center;}#masthead .title h1{font-family:Montserrat,Arial,sans-serif;text-transform:uppercase;font-size:3.0em;}
 #masthead .title .byline{margin-top:20px;border-top:1px solid #fff;padding-top:20px;font-style:italic;font-size:1.2em;}#masthead .title .byline a{color:white;}#masthead .title .byline a:hover{text-decoration:underline;}
 #masthead .graphic-source{font-weight:bold;position:absolute;right:10px;bottom:10px;}#masthead .graphic-source a{color:rgba(255, 255, 255, 0.7);}#masthead .graphic-source a:hover{text-decoration:underline;}
 #masthead .block-wrapper{position:absolute;bottom:0;left:0;right:0;}
