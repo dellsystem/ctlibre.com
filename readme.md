@@ -17,4 +17,4 @@ the derivative is available under the same license.
 
 [1]: http://www.flickr.com/photos/anirudhkoul/788832193/sizes/l/in/photostream/
 [2]: http://creativecommons.org/licenses/by-nc/2.0/
-[agpl]: https://www.gnu.org/licenses/why-affero-gpl.html
+[AGPL v3]: https://www.gnu.org/licenses/why-affero-gpl.html
